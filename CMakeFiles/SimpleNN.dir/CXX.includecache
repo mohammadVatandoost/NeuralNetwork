@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/main.cpp
+iostream
+-
+vector
+-
+fstream
+-
+numeric
+-
+memory
+-
+

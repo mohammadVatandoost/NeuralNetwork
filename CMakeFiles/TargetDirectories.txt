@@ -1,0 +1,7 @@
+/media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/CMakeFiles/install/strip.dir
+/media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/CMakeFiles/edit_cache.dir
+/media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/CMakeFiles/SimpleNN.dir
+/media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/CMakeFiles/rebuild_cache.dir
+/media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/CMakeFiles/list_install_components.dir
+/media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/CMakeFiles/install/local.dir
+/media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/CMakeFiles/install.dir
