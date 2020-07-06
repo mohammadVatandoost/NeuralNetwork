@@ -5,6 +5,13 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+enable_testing()
+
+set( Headers
+   
+)
+
+
 add_executable("${PROJECT_NAME}" main.cpp)
 
 install(TARGETS "${PROJECT_NAME}" DESTINATION bin) # (CMAKE_INSTALL_PREFIX) /bin

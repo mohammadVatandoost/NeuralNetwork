@@ -6,8 +6,10 @@
 
 #IncludeRegexTransform: 
 
-/media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/main.cpp
+/media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/Global.hpp
 iostream
+-
+memory
 -
 vector
 -
@@ -15,6 +17,16 @@ fstream
 -
 numeric
 -
-memory
+map
 -
+cmath
+-
+
+/media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/Neuron.hpp
+Global.hpp
+/media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/Global.hpp
+
+/media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/main.cpp
+Neuron.hpp
+/media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/Neuron.hpp
 
