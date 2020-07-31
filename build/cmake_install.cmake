@@ -1,4 +1,4 @@
-# Install script for directory: /media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1
+# Install script for directory: /home/mohammad/SimpleNN
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -37,24 +37,12 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/SimpleNN" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/SimpleNN")
-    file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/SimpleNN"
-         RPATH "")
-  endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/build/SimpleNN")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/SimpleNN" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/SimpleNN")
-    if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/SimpleNN")
-    endif()
-  endif()
-endif()
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("/home/mohammad/SimpleNN/build/src/cmake_install.cmake")
+  include("/home/mohammad/SimpleNN/build/test/cmake_install.cmake")
+  include("/home/mohammad/SimpleNN/build/lib/googletest/cmake_install.cmake")
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/src" TYPE FILE FILES "/media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/main.cpp")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -65,5 +53,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/mohammad/SimpleNN/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

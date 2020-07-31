@@ -1,0 +1,1 @@
+/usr/bin/g++-7     CMakeFiles/SimpleNN_run.dir/main.cpp.o  -o SimpleNN_run 

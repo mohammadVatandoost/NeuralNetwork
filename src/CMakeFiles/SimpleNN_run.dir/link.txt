@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/SimpleNN_run.dir/main.cpp.o  -o SimpleNN_run 

@@ -1,0 +1,1 @@
+/usr/bin/g++-7     CMakeFiles/SimpleNN_test.dir/main.cpp.o  -o SimpleNN_test ../src/libSimpleNN_lib.a ../lib/libgtestd.a -lpthread 

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSimpleNN_lib.a  CMakeFiles/SimpleNN_lib.dir/main.cpp.o
+/usr/bin/ranlib libSimpleNN_lib.a

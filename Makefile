@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1
+CMAKE_SOURCE_DIR = /home/mohammad/SimpleNN
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1
+CMAKE_BINARY_DIR = /home/mohammad/SimpleNN
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,6 +68,18 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -79,17 +91,6 @@ install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -123,23 +124,11 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/CMakeFiles /media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mohammad/SimpleNN/CMakeFiles /home/mohammad/SimpleNN/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/mohammad/1ED9E8D6138E2910/Tutorial/AI/MyCode/SimpleNN/V1/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mohammad/SimpleNN/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -168,44 +157,95 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named SimpleNN
+# Target rules for targets named SimpleNN_lib
 
 # Build rule for target.
-SimpleNN: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 SimpleNN
-.PHONY : SimpleNN
+SimpleNN_lib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 SimpleNN_lib
+.PHONY : SimpleNN_lib
 
 # fast build rule for target.
-SimpleNN/fast:
-	$(MAKE) -f CMakeFiles/SimpleNN.dir/build.make CMakeFiles/SimpleNN.dir/build
-.PHONY : SimpleNN/fast
+SimpleNN_lib/fast:
+	$(MAKE) -f src/CMakeFiles/SimpleNN_lib.dir/build.make src/CMakeFiles/SimpleNN_lib.dir/build
+.PHONY : SimpleNN_lib/fast
 
-main.o: main.cpp.o
+#=============================================================================
+# Target rules for targets named SimpleNN_run
 
-.PHONY : main.o
+# Build rule for target.
+SimpleNN_run: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 SimpleNN_run
+.PHONY : SimpleNN_run
 
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/SimpleNN.dir/build.make CMakeFiles/SimpleNN.dir/main.cpp.o
-.PHONY : main.cpp.o
+# fast build rule for target.
+SimpleNN_run/fast:
+	$(MAKE) -f src/CMakeFiles/SimpleNN_run.dir/build.make src/CMakeFiles/SimpleNN_run.dir/build
+.PHONY : SimpleNN_run/fast
 
-main.i: main.cpp.i
+#=============================================================================
+# Target rules for targets named SimpleNN_test
 
-.PHONY : main.i
+# Build rule for target.
+SimpleNN_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 SimpleNN_test
+.PHONY : SimpleNN_test
 
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/SimpleNN.dir/build.make CMakeFiles/SimpleNN.dir/main.cpp.i
-.PHONY : main.cpp.i
+# fast build rule for target.
+SimpleNN_test/fast:
+	$(MAKE) -f test/CMakeFiles/SimpleNN_test.dir/build.make test/CMakeFiles/SimpleNN_test.dir/build
+.PHONY : SimpleNN_test/fast
 
-main.s: main.cpp.s
+#=============================================================================
+# Target rules for targets named gmock_main
 
-.PHONY : main.s
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
 
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/SimpleNN.dir/build.make CMakeFiles/SimpleNN.dir/main.cpp.s
-.PHONY : main.cpp.s
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) -f lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) -f lib/googletest/googlemock/CMakeFiles/gmock.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) -f lib/googletest/googletest/CMakeFiles/gtest_main.dir/build.make lib/googletest/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) -f lib/googletest/googletest/CMakeFiles/gtest.dir/build.make lib/googletest/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
 
 # Help Target
 help:
@@ -214,16 +254,18 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
+	@echo "... install"
 	@echo "... install/local"
-	@echo "... test"
 	@echo "... list_install_components"
-	@echo "... SimpleNN"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... install"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... SimpleNN_lib"
+	@echo "... SimpleNN_run"
+	@echo "... SimpleNN_test"
+	@echo "... gmock_main"
+	@echo "... gmock"
+	@echo "... gtest_main"
+	@echo "... gtest"
 .PHONY : help
 
 
